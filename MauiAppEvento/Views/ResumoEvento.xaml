@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppEvento.Views.ResumoEvento"
+             Title="Resumo do Evento"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource OffBlack}">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <Label Text="Resumo do Evento"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <!-- Usamos um Grid para alinhar rótulos e valores -->
+            <Grid RowSpacing="10" ColumnSpacing="10" Margin="0,20,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <!-- Nome -->
+                <Label Grid.Row="0" Grid.Column="0" Text="Evento:" FontAttributes="Bold" />
+                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Nome}" />
+
+                <!-- Local -->
+                <Label Grid.Row="1" Grid.Column="0" Text="Local:" FontAttributes="Bold" />
+                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Local}" />
+
+                <!-- Data Início -->
+                <Label Grid.Row="2" Grid.Column="0" Text="Início:" FontAttributes="Bold" />
+                <Label Grid.Row="2" Grid.Column="1" Text="{Binding DataInicio, StringFormat='{0:dd/MM/yyyy}'}" />
+
+                <!-- Data Término -->
+                <Label Grid.Row="3" Grid.Column="0" Text="Término:" FontAttributes="Bold" />
+                <Label Grid.Row="3" Grid.Column="1" Text="{Binding DataTermino, StringFormat='{0:dd/MM/yyyy}'}" />
+
+                <!-- Duração (Calculada) -->
+                <Label Grid.Row="4" Grid.Column="0" Text="Duração:" FontAttributes="Bold" />
+                <Label Grid.Row="4" Grid.Column="1" Text="{Binding DuracaoEmDias, StringFormat='{0} dias'}" />
+
+                <!-- Participantes -->
+                <Label Grid.Row="5" Grid.Column="0" Text="Participantes:" FontAttributes="Bold" />
+                <Label Grid.Row="5" Grid.Column="1" Text="{Binding NumeroParticipantes}" />
+
+                <!-- Custo por Participante -->
+                <Label Grid.Row="6" Grid.Column="0" Text="Custo/Pessoa:" FontAttributes="Bold" />
+                <!-- 'C' formata como moeda -->
+                <Label Grid.Row="6" Grid.Column="1" Text="{Binding CustoPorParticipante, StringFormat='{0:C}'}" />
+
+            </Grid>
+
+            <!-- Custo Total (Calculado) -->
+            <BoxView HeightRequest="1" Color="Gray" Margin="0,15" />
+            <Label HorizontalOptions="Center" FontAttributes="Bold" FontSize="18">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Custo Total: " />
+                        <!-- 'C' formata como moeda -->
+                        <Span Text="{Binding CustoTotal, StringFormat='{0:C}'}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
