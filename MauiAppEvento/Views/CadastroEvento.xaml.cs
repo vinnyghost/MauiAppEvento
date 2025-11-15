@@ -29,5 +29,10 @@ namespace MauiAppEvento.Views
             // que contém todos os dados e os cálculos.
             await Navigation.PushAsync(new ResumoEvento(evento));
         }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Sobre());
+        }
     }
 }

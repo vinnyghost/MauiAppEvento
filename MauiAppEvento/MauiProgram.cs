@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
 
-// Namespace atualizado para MauiAppEvento
 namespace MauiAppEvento
 {
     public static class MauiProgram
@@ -12,7 +11,6 @@ namespace MauiAppEvento
                 .UseMauiApp<App>()
                 .ConfigureFonts(fonts =>
                 {
-                    // Mantive os fontes do seu projeto original
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                     fonts.AddFont("Kalam-Bold.ttf", "KalamBold");

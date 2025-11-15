@@ -9,8 +9,8 @@ namespace MauiAppEvento
         {
             InitializeComponent();
 
-            // Iniciar tela de Cadastro, dentro de uma NavigationPage para permitir a navegação.
-            MainPage = new NavigationPage(new CadastroEvento());
+            // Iniciar na tela Home, dentro de uma NavigationPage para permitir a navegação.
+            MainPage = new NavigationPage(new Home());
         }
 
         protected override Window CreateWindow(IActivationState? activationState)

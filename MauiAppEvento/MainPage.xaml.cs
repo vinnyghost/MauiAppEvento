@@ -1,5 +1,4 @@
-﻿// Namespace atualizado
-namespace MauiAppEvento
+﻿namespace MauiAppEvento
 {
     public partial class MainPage : ContentPage
     {

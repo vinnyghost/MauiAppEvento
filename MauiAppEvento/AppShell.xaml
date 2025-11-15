@@ -7,9 +7,6 @@
     Shell.FlyoutBehavior="Disabled"
     Title="MauiAppEvento">
 
-    <!-- Embora App.xaml.cs defina a MainPage, é boa prática
-         manter o Shell atualizado ou removê-lo se não for usado.
-         Vou apenas atualizar o namespace aqui. -->
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"

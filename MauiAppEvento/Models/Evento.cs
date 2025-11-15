@@ -12,12 +12,12 @@
         public decimal CustoPorParticipante { get; set; }
 
         // Lógica que calcula a duração do evento em dias
-        // Usamos .Date para ignorar a hora e garantir um cálculo de dias inteiros.
+        // Usei .Date para ignorar a hora e garantir um cálculo de dias inteiros.
         public int DuracaoEmDias
         {
             get
             {
-                // TimeSpan é usado para calcular a diferença
+                // TimeSpan usado para calcular a diferença
                 TimeSpan duracao = DataTermino.Date - DataInicio.Date;
 
                 // Adicionei 1 para tornar a contagem inclusiva.
